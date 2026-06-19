@@ -195,6 +195,41 @@
   .hidden { display: none !important; }
 
   footer { text-align: center; padding: 30px; color: var(--muted); font-size: 0.75rem; border-top: 0.5px solid var(--border); margin-top: 40px; }
+
+  /* ── MOBILE (<=600px) ── */
+  @media (max-width: 600px) {
+    header { padding: 16px 16px 12px; }
+    header h1 { font-size: 1.15rem; }
+    .header-meta { gap: 10px 14px; font-size: 0.72rem; }
+    .year-nav { padding: 8px 12px; flex-wrap: nowrap; }
+    main { padding: 18px 14px; }
+    .year-section { margin-bottom: 32px; }
+    .artwork-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .card { border-radius: 14px; padding: 8px; }
+
+    /* Lightbox: plein écran, arborescence en bande horizontale au-dessus */
+    #lb-overlay { backdrop-filter: blur(6px); }
+    #lb-panel { width: 100vw; height: 100dvh; max-width: none; border-radius: 0; border: none; }
+    #lb-header { padding: 12px 14px; }
+    #lb-body { flex-direction: column; }
+    #lb-tree {
+      width: 100%; max-height: none; flex: 0 0 auto;
+      border-right: none; border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: row; gap: 8px;
+      overflow-x: auto; overflow-y: hidden; padding: 8px 10px;
+    }
+    .tree-node {
+      flex: 0 0 auto; width: 120px; flex-direction: column; gap: 6px;
+      border-left: none; border-bottom: none;
+      border: 0.5px solid var(--border); border-radius: 8px; padding: 8px;
+    }
+    .tree-node.active { border-color: var(--accent); background: var(--surface2); }
+    .tree-caption { -webkit-line-clamp: 1; }
+    #lb-viewer { flex: 1 1 auto; min-height: 0; }
+    .lb-arrow { width: 40px; height: 40px; font-size: 1.5rem; }
+    #lb-prev { left: 8px; } #lb-next { right: 8px; }
+    #lb-caption-text { max-width: 60%; font-size: 0.72rem; }
+  }
 </style>
 </head>
 <body>
