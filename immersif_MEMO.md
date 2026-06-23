@@ -5,15 +5,15 @@ Page autonome `immersif.html`, en complément du catalogue raisonné. Accessible
 
 ## Ce que c'est
 Une cartographie interactive des œuvres VR de Jamil sous forme de **nuage de points** :
-- chaque œuvre est un nœud ; au **survol**, le nœud approché aspire ses œuvres reliées et déforme toute la cartographie ;
+- au **survol**, le nœud approché se fige (cliquable), ses œuvres reliées se rapprochent et les autres s'écartent — la déformation se fige comme nouvel état ; on peut glisser vers un voisin sans « attraper » la cible ;
 - **clic** sur une œuvre → zoom révélant l'affiche + son carrousel d'images + les œuvres reliées ;
-- molette/pincer pour zoomer (les points deviennent vignettes), glisser pour déplacer ;
+- molette/pincer pour zoomer (les points deviennent vignettes), glisser pour déplacer, « Recentrer » pour rétablir la disposition d'origine ;
 - filtre par année, bascule liens/vignettes ;
 - palette et esthétique reprises du catalogue (clair/sombre automatique), pensée mobile.
 
 ## Deux modes (bouton « Critère »)
-- **Proxy** : les 495 œuvres, placées par affinité (mots-clés + chronologie), dé-densifiées.
-- **Géométrie** : critère retenu — œuvres placées par **forme réelle** de la couverture (contours, angularité, complexité, symétrie) et colorées par leur **couleur dominante**. Au 21/06/2026 : **60 / 495 couvertures analysées** ; les autres s'ajouteront au fil des prochains lots.
+- **Chronologie** : les 495 œuvres placées dans le temps (gauche→droite : 2017→2025, hauteur = densité par période). Lisible et complet.
+- **Géométrie** : critère artistique — œuvres placées par **forme réelle** de la couverture (contours, angularité, complexité, symétrie) et colorées par leur **couleur dominante**. Au 22/06/2026 : **99 / 495 couvertures analysées** ; les autres s'ajouteront au fil des prochains lots.
 
 ## État / suite
 - Données inline dans la page (un seul fichier à déployer, aucune dépendance).
