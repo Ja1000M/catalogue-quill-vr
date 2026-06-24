@@ -5,9 +5,9 @@ peintes en VR (principalement avec **Quill**) entre **2017 et 2025** — environ
 
 **En ligne :** https://ja1000m.github.io/catalogue-quill-vr/
 
-## Deux entrées
+## Trois entrées
 
-Le site s'ouvre sur une page d'accueil à double entrée :
+Le site s'ouvre sur une page d'accueil à triple entrée :
 
 - **Catalogue raisonné** (`catalogue.html`) — les œuvres classées par année, documentées et
   consultables une à une (vue grille + visionneuse).
@@ -18,6 +18,10 @@ Le site s'ouvre sur une page d'accueil à double entrée :
   - **Chronologie** — les œuvres placées dans le temps (2017 → 2025) ;
   - **Géométrie / texture** — les œuvres placées par la **forme** et la **couleur** réelles de
     leur couverture.
+
+- **Réseau d'espaces** (`reseau.html`) — une œuvre à part entière : **30 espaces immersifs**
+  reliés en une **structure sphérique** (à la manière des facettes d'un ballon), explorable en
+  **3D** ; chaque cube ouvre son espace sur Monaverse.
 
 ## Textures spatiales
 
@@ -31,9 +35,10 @@ textures (Diaphane, Filaments, Lueurs, Paysage, Foisonnement, Échappée, Fractu
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Page d'accueil (double entrée) |
+| `index.html` | Page d'accueil (triple entrée) |
 | `catalogue.html` | Catalogue raisonné |
 | `immersif.html` | Constellation immersive (autonome, données incluses) |
+| `reseau.html` | Réseau d'espaces (30 espaces 3D, Three.js) |
 | `immersif_MEMO.md` | Note sur la présentation immersive |
 
 Les images sont hébergées sur Google Drive (dossier partagé) et chargées à la volée.
