@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ja1000m.github.io/catalogue-quill-vr/sitemap.xml
