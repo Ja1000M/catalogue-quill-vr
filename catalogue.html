@@ -7031,7 +7031,7 @@ function buildTree(aid) {
   document.getElementById('lb-header-sub').textContent =
     posts.length + ' post' + (posts.length > 1 ? 's' : '') +
     ' · ' + totalImgs + ' image' + (totalImgs > 1 ? 's' : '') +
-    (withDrive < totalImgs ? ' (' + withDrive + ' sur Drive)' : ' sur Drive');
+    (withDrive < totalImgs ? ' (' + withDrive + ' visibles)' : '');
 
   resetViewer();
   const tree = document.getElementById('lb-tree');
