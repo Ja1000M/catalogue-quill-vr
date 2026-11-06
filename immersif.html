@@ -99,6 +99,9 @@
     background:var(--surface2);box-shadow:0 26px 70px rgba(0,0,0,.5);opacity:0;
     transition:opacity .4s,transform .4s;transform:scale(.96)}
   .hero img.in,.hero iframe.in{opacity:1;transform:scale(1)}
+  .hero .vidwrap{position:relative;display:inline-block}
+  .hero .vidwrap .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.45);color:#fff;font-size:24px;cursor:pointer;padding-left:5px}
+  .hero .vidwrap .play:hover{background:rgba(0,0,0,.7)}
   .navbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;cursor:pointer;
     border:0.5px solid rgba(255,255,255,.25);background:rgba(26,25,23,.55);color:#fff;
     width:42px;height:42px;border-radius:50%;font-size:1.2rem}
@@ -198,7 +201,7 @@ const I18N = {
 const DATA = JSON.parse(document.getElementById('data').textContent);
 const NODES = DATA.nodes, LINKS = DATA.links, META = DATA.meta;
 const YEARS = META.years;
-const THUMB = (id,sz)=>META.thumb.replace('{ID}',id).replace('{SZ}',sz);
+const THUMB = (id,sz)=>'img/'+(sz<=400?'s':'l')+'/'+id+'.jpg'; // local copies (were Drive thumbnails)
 const PREVIEW = id=>META.preview.replace('{ID}',id);
 
 let DARK = matchMedia('(prefers-color-scheme: dark)').matches;
@@ -455,7 +458,10 @@ function openProject(n){
 function renderHero(){
   const n=cur.node,id=n.imgs[cur.idx],isVid=n.vid[cur.idx];
   const hero=document.getElementById('pHero'); hero.innerHTML=''; let el;
-  if(isVid){el=document.createElement('iframe');el.src=PREVIEW(id);el.allow='autoplay';el.className='in';}
+  if(isVid){el=document.createElement('div');el.className='vidwrap';
+    el.innerHTML=`<img src="${THUMB(id,1600)}" alt=""><button class="play" aria-label="Play (Google Drive)">▶</button>`;
+    const im=el.querySelector('img'); im.onload=()=>im.classList.add('in');
+    el.querySelector('.play').onclick=()=>{const f=document.createElement('iframe');f.src=PREVIEW(id);f.allow='autoplay';f.className='in';el.replaceWith(f);};}
   else{el=document.createElement('img');el.src=THUMB(id,1600);el.onload=()=>el.classList.add('in');}
   hero.appendChild(el);
   document.getElementById('pCount').textContent=`${cur.idx+1} / ${n.imgs.length}`;
